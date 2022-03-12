@@ -20,4 +20,10 @@ export function tokenize(text) {
         .filter(exists);
 }
 
+const PARAGRAPH_CHARACTER = "\n";
+
+export function textify(tokens){
+    return tokens.join('').replaceAll(NEWLINE_PLACEHOLDER, PARAGRAPH_CHARACTER);
+}
+
 
