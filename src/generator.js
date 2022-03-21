@@ -1,4 +1,4 @@
-import {tokenize, textify} from "./tokenizer.js";
+import { tokenize, textify } from "./tokenizer/tokenizer.js";
 
 const escapeString = (token) => `_+${token}`;
 const fromTokens = (tokens) => escapeString(tokens.join(''));
