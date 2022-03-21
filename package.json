@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/corocoto/markov-chains-generator/issues"
   },
-  "homepage": "https://github.com/corocoto/markov-chains-generator#readme"
+  "homepage": "https://github.com/corocoto/markov-chains-generator#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
 }
