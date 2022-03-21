@@ -2,10 +2,10 @@
   "name": "markov-chains-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "src/js/generator.js",
+  "main": "src/generator.js",
   "type": "module",
   "scripts": {
-    "start": "node src/js/generator.js"
+    "start": "node src/generator.js"
   },
   "repository": {
     "type": "git",
