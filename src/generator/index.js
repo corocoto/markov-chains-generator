@@ -1,0 +1,1 @@
+export {generate as default} from './generator.js';

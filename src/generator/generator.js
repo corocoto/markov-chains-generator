@@ -1,7 +1,5 @@
-import { tokenize, textify } from "./tokenizer/tokenizer.js";
-
-const escapeString = (token) => `_+${token}`;
-const fromTokens = (tokens) => escapeString(tokens.join(''));
+import { tokenize, textify } from "../tokenizer/tokenizer.js";
+import { fromTokens, pickRandom } from "./utils/index.js";
 
 function sliceCorpus(corpus, sampleSize = 2) {
     return corpus
@@ -25,10 +23,6 @@ function collectTransitions(samples) {
         return transitions;
     }, {});
 }
-
-
-const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-const pickRandom = (list) => list[random(0, list.length - 1)];
 
 function predictNext(chain, transitions, sampleSize) {
     const lastState = fromTokens(chain.slice(-(sampleSize - 1)));
@@ -66,6 +60,3 @@ export function generate({source, start = null, wordsCount = 100 } = {}) {
 
     return textify(generatedTokens);
 }
-
-
-console.log(generate({source: `Из молодежи, не считая старшей дочери графини (которая была четырьмя годами старше сестры и держала себя уже как большая) и гостьи-барышни, в гостиной остались Николай и Соня-племянница. Соня была тоненькая, миниатюрненькая брюнетка с мягким, отененным длинными ресницами взглядом, густою черною косою, два раза обвивавшею ее голову, и желтоватым оттенком кожи на лице и в особенности на обнаженных худощавых, но грациозных мускулистых руках и шее.`, wordsCount: 200}));
